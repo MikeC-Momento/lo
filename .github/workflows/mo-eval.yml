@@ -8,6 +8,9 @@ on:
       harnesses:
         description: Coding-agent harnesses, space-separated (mo, cc, pi, strands, codex)
         default: "mo"
+      candidates:
+        description: How many selected changes to validate (the Action's default is 12)
+        default: "30"
       dry-run:
         description: Mine and select only, print the funnel, run nothing
         type: boolean
@@ -33,4 +36,5 @@ jobs:
         with:
           arms: ${{ inputs.arms }}
           harnesses: ${{ inputs.harnesses }}
+          candidates: ${{ inputs.candidates }}
           dry-run: ${{ inputs.dry-run }}
